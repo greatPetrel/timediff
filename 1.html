@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+</head>
+<body>
+<button>连击计数</button>
+<script>
+    var status={
+        "count":0,
+        "history":0,
+        "isFirstClick":false,
+        "lastClick":0
+    };
+    var openTime=new Date();
+    var bt=$("button");
+
+    bt.on("click",changeStatus());
+    function changeStatus(){
+        var clickTime=new Date();
+        //如果是第一次点击
+        if(!status.isContinue){
+            status.count++;
+            status.isContinue=true;
+            if(clickTime)
+            status.lastClick=clickTime;
+        }
+        else{
+            status.history=status.count;
+        }
+        setInterval(function(){
+            if(status.count<status.history){
+                alert("连击了"+status.history+"次");
+            }
+        },300);
+
+    }
+
+
+</script>
+</body>
+</html>

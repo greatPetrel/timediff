@@ -1,0 +1,17 @@
+{
+  "name": "ghy",
+  "description": "text",
+  "main": "1.html",
+  "moduleType": [],
+  "keywords": [
+    "tst"
+  ],
+  "authors": [
+    "ghy"
+  ],
+  "license": "MIT",
+  "homepage": "1.html",
+  "dependencies": {
+    "jquery": "^2.2.1"
+  }
+}
